@@ -11,9 +11,10 @@ $(document).ready(function() {
 });
 
 function attachListeners(){
- //attach event listeners for each sqauare on board
- //when square is clicked doTurn() should be invoked
-
+  $("td").click(function(){
+    if(this.innerHTML === "" && !checkWinner()){
+      doTurn(this)
+    }
   //event listeners for buttons
   $('#save').on('click', function() {
     saveGame()
